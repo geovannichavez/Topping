@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/group_sections"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/drawer_menu_sell"/>
+        <item
+            android:id="@+id/nav_sales_history"
+            android:icon="@drawable/ic_history"
+            android:title="@string/drawer_menu_sales_history"/>
+        <item
+            android:id="@+id/nav_buy_airtime"
+            android:icon="@drawable/ic_buy"
+            android:title="@string/drawer_menu_buy_airtime"/>
+
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/ic_notifications"
+            android:title="@string/drawer_menu_notifications"/>
+
+        <item
+            android:id="@+id/nav_special_offers"
+            android:icon="@drawable/ic_promos"
+            android:title="@string/drawer_menu_special_offers"/>
+
+        <item
+            android:id="@+id/nav_chat"
+            android:icon="@drawable/ic_livechat"
+            android:title="@string/drawer_menu_topping_chat_support"/>
+    </group>
+    <group
+        android:id="@+id/group_settings"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/drawer_menu_settings"/>
+
+    </group>
+
+</menu>
