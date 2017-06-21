@@ -10,5 +10,6 @@
     <string name="drawer_menu_topping_chat_support">Topping Chat (Support)</string>
     <string name="drawer_menu_settings">Settings</string>
     <string name="label_vendor_code">Vendor Code: %1$d</string>
+    <string name="label_please_signin">To continue, please authenticate using one of these options</string>
 
 </resources>
