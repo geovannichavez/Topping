@@ -1,0 +1,324 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.globalpaysolutions.topping.ui.fragments.Main">
+
+    <!--  CONTENEDOR DEL BACKGROUND, PADRE DE TODAS  -->
+    <LinearLayout
+        android:id="@+id/activity_request_topup"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+
+        <!--    SEGUNDA CONTENEDORA, TODAS LAS VISTAS ESTAN ADENTRO
+                Para evitar el focus en EditText se
+                ha añadido 'focusable' y 'focusableInTouchMode' -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <!--  SWIPELAYOUT, ADENTRO ESTA EL SCROLLVIEW  -->
+            <android.support.v4.widget.SwipeRefreshLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/swipe_refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true">
+
+                <!--    SCROLLVIEW  -->
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true">
+
+                    <!--    DEFINE EL PESO DEL LA LAYOUT,
+                            ADENTRO ESTAN EL RESTO DE VISTAS-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin"
+                        android:weightSum="100">
+
+                        <!--    PRIMER SECCION
+                                Peso: 20         -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="@dimen/null_margin"
+                            android:paddingTop="@dimen/null_margin"
+                            android:paddingBottom="@dimen/null_margin"
+                            android:layout_weight="20"
+                            android:gravity="center_vertical">
+
+                            <!--Contenedor de Rectangulo-->
+                            <LinearLayout
+                                android:id="@+id/first_section"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"              >
+
+                                <!--Layout con rectangulo-->
+                                <LinearLayout
+                                    android:id="@+id/rectangle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="65dp"
+                                    android:background="@drawable/custom_rectangle"
+                                    android:minWidth="160dp"
+                                    android:orientation="vertical"
+                                    android:gravity="center"
+                                    android:paddingTop="@dimen/null_margin"
+                                    android:paddingBottom="@dimen/null_margin"
+                                    android:paddingLeft="26dp"
+                                    android:paddingRight="26dp">
+
+                                    <!--Textos-->
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/tvCurrency"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="$"
+                                            android:textColor="@color/colorPrimary"
+                                            android:textSize="44sp"
+                                            android:textStyle="bold"/>
+
+                                        <TableLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginStart="@dimen/medium_margin"
+                                            android:layout_marginLeft="@dimen/medium_margin">
+
+                                            <TableRow>
+                                                <TextView
+                                                    android:id="@+id/tvAvailableBalance"
+                                                    android:text="400.00"
+                                                    android:textColor="@color/colorPrimary"
+                                                    android:textSize="30sp"
+                                                    android:textStyle="bold"/>
+                                            </TableRow>
+
+                                            <TableRow>
+
+                                                <TextView
+                                                    android:id="@+id/tvAvailableBalanceLabel"
+                                                    android:layout_marginTop="@dimen/negative_4dp_margin"
+                                                    android:text="Available"
+                                                    android:textSize="12sp"/>
+                                            </TableRow>
+                                        </TableLayout>
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <View style="@style/horizontalGrayLine"/>
+
+                        <!--    SEGUNDA SECCION
+                                Operadores GridView
+                                Peso: 20         -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="20"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="@dimen/null_margin"
+                            android:layout_marginTop="8dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingTop="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:text="@string/label_select_carrier"
+                                android:textSize="14sp"/>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <GridView
+                                    android:id="@+id/gvOperadores"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="70dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:choiceMode="singleChoice"
+                                    android:gravity="center_horizontal"
+                                    android:horizontalSpacing="8dp"
+                                    android:numColumns="2"
+                                    android:scrollbars="none"/>
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <!--    TERCERA SECCION
+                                Contenedor de Monto de Recarga
+                                Peso: 20         -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="20"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="@dimen/short_margin"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:text="@string/label_select_amount"
+                                android:textSize="14sp"/>
+
+                            <View style="@style/horizontalGrayLine"/>
+
+                            <LinearLayout
+                                android:id="@+id/lnrSelectAmount"
+                                android:layout_width="match_parent"
+                                android:layout_height="37dp"
+                                android:background="?attr/selectableItemBackground"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:id="@+id/lblSelectedAmount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/hint_select_amount"
+                                    android:textSize="16sp"/>
+                            </LinearLayout>
+
+                            <View style="@style/horizontalGrayLine"/>
+
+
+                        </LinearLayout>
+
+                        <!--    CUARTA SECCION
+                                Contenedor del Código de Vendedor
+                                Peso: 18         -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="18"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:text="@string/label_phone_number"
+                                android:textSize="14sp"
+                                android:id="@+id/textView2"/>
+
+                            <EditText
+                                android:id="@+id/etCodeNumber"
+                                android:layout_width="220dp"
+                                android:layout_height="wrap_content"
+                                android:digits="0123456789"
+                                android:ellipsize="start"
+                                android:gravity="center"
+                                android:hint="401 7763 0099"
+                                android:imeOptions="actionDone"
+                                android:inputType="number"
+                                android:maxLength="13"
+                                android:textSize="23sp"/>
+                        </LinearLayout>
+
+
+                        <!--    QUINTA SECCION
+                                Contenedor de Boton
+                                Peso: 22            -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="22"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                android:gravity="center"
+                                android:text="@string/label_write_correct_phone_number"
+                                android:textSize="14sp"
+                                android:id="@+id/textView3"/>
+
+                            <LinearLayout
+                                android:weightSum="10"
+                                android:gravity="center_horizontal"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/btnEnvar"
+                                    android:layout_weight="6"
+                                    android:layout_width="0dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginRight="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:backgroundTint="@color/colorPrimary"
+                                    android:clickable="true"
+                                    android:text="@string/button_send_topping"
+                                    android:textColor="@color/color_white"/>
+
+
+                            </LinearLayout>
+
+
+                            <TextView
+                                android:id="@+id/tvStoreLink"
+                                android:textColor="@color/colorPrimary"
+                                android:textStyle="bold"
+                                android:textSize="12sp"
+                                android:layout_marginTop="12dp"
+                                android:text="@string/label_become_vendor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </ScrollView>
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

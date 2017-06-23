@@ -2,6 +2,7 @@ package com.globalpaysolutions.topping.ui.activities;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 
 import com.globalpaysolutions.topping.R;
 import com.globalpaysolutions.topping.presenters.HomePresenterImpl;
+import com.globalpaysolutions.topping.ui.fragments.Main;
 import com.globalpaysolutions.topping.views.HomeView;
 
 public class Home extends AppCompatActivity implements HomeView, NavigationView.OnNavigationItemSelectedListener
@@ -23,6 +25,7 @@ public class Home extends AppCompatActivity implements HomeView, NavigationView.
 
     //MVP
     HomePresenterImpl mPresenter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -39,7 +42,16 @@ public class Home extends AppCompatActivity implements HomeView, NavigationView.
     @Override
     public void initializeView()
     {
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
 
+        //Sets the main fragment
+        navigationView.setCheckedItem(R.id.nav_home);
+        Main mainFragment = new Main();
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        toolbar.setTitle("Topping");
+        fragmentTransaction.replace(R.id.homeFragment, mainFragment);
+        fragmentTransaction.commit();
     }
 
     @Override

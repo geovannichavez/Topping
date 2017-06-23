@@ -12,4 +12,14 @@
     <string name="label_vendor_code">Vendor Code: %1$d</string>
     <string name="label_please_signin">To continue, please authenticate using one of these options</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_select_carrier">Select a carrier:</string>
+    <string name="label_select_amount">Select an amount:</string>
+    <string name="hint_select_amount">Purchase amount</string>
+    <string name="label_phone_number">Phone number:</string>
+    <string name="label_write_correct_phone_number">Be sure to write the right phone number!</string>
+    <string name="button_send_topping">Send Topping!</string>
+    <string name="label_become_vendor">Become a vendor!</string>
+
 </resources>
