@@ -7,4 +7,6 @@ package com.globalpaysolutions.topping.presenters.interfaces;
 public interface IHomePresenter
 {
     void initializeViews();
+    void setInitialFragment();
+    boolean handleMenuItemSelected(int pID);
 }

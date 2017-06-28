@@ -10,6 +10,7 @@ import java.util.List;
 
 public interface HomeView
 {
-    void initializeView();
     void initializeDrawer();
+    void setInitialFragment();
+    boolean navigationItemSelected(int id);
 }

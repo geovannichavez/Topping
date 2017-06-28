@@ -21,5 +21,13 @@
     <string name="label_write_correct_phone_number">Be sure to write the right phone number!</string>
     <string name="button_send_topping">Send Topping!</string>
     <string name="label_become_vendor">Become a vendor!</string>
+    <string name="contentdescription_topping_logo">Topping Logo</string>
+    <string name="title_insert_pin">Personal Identification Number</string>
+    <string name="content_insert_pin">Create a 4 digits PIN code to protect your account. This will be used to restrict access to third parties to use the application. </string>
+    <string name="pin_insert_hint">PIN</string>
+    <string name="pin_confirm_hint">Confirm PIN</string>
+    <string name="button_ok">Ok</string>
+    <string name="label_applied">Applied</string>
+    <string name="label_paid_question">Paid?</string>
 
 </resources>

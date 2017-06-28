@@ -31,14 +31,18 @@
 
         <activity
             android:name=".ui.activities.Home"
-            >
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ui.activities.Signin"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activities.Signin">
+        <activity android:name=".ui.activities.PinCode">
         </activity>
     </application>
 

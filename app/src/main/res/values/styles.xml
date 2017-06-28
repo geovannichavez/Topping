@@ -68,4 +68,21 @@
         <item name="android:background">@color/color_light_gray</item>
     </style>
 
+    <!--    TAB LAYOUT -->
+
+
+    <style name="appTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabBackground">@color/colorPrimary</item>
+        <item name="tabTextAppearance">@style/appTabTextAppearance</item>
+        <item name="tabSelectedTextColor">@color/color_white</item>
+        <item name="tabIndicatorColor">@color/color_white</item>
+    </style>
+
+    <!-- for text -->
+    <style name="appTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/color_ultra_light_gray</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <dimen name="tab_max_width">120dp</dimen>
 </resources>
